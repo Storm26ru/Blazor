@@ -1,0 +1,41 @@
+﻿.Convertion {
+    display: flex;
+    flex-direction: column;
+    /*border:solid;*/
+   /* width:1000px;*/
+    text-align:center;
+}
+#body
+{
+    display:flex;
+    margin-bottom:10px;
+    justify-content:center;
+}
+.Interface 
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis:40%;
+}
+/*input, select
+{
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    height: 25px;
+}*/
+input[type=text] 
+{
+    height: 60px;
+}
+#separator 
+{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 32px;
+}
+span 
+{
+    text-align: center;
+}

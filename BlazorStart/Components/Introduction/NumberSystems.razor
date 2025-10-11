@@ -1,0 +1,39 @@
+﻿@rendermode InteractiveServer
+@using BlazorStart.Components.Introduction
+@inject IJSRuntime JSRuntime
+
+<details>
+	<summary>Number systems</summary>
+	<form class="Convertion">
+		<h4>Перевод числа в системы счисления</h4>
+		<div id="body">
+			<div class="Interface">
+				<span>Выберите систему счисления</span>
+				<select  @oninput="@((e)=>SystemIn=Convert.ToInt32(e.Value))">
+					<option>2</option>
+					<option selected="selected">10</option>
+					<option>16</option>
+				</select>
+				<span>Введите число</span>
+				<input type="text"  @oninput="@((e)=>convert_to_Number(e.Value.ToString()))"/>
+			</div>
+			<div id="separator">
+				<p>⟹</p>
+			</div>
+			<div class="Interface">
+				<span>Выберите систему счисления</span>
+				<select @bind="SystemOut">
+					<option selected="selected">2</option>
+					<option>10</option>
+					<option>16</option>
+				</select>
+				<span>Результат</span>
+				<input type="text" value=@Convert.ToString(Number,SystemOut)/>
+			</div>
+		</div>
+	</form>
+		
+
+</details>
+
+

@@ -1,0 +1,17 @@
+﻿@rendermode InteractiveServer
+<details>
+	<summary>Factorial</summary>
+	<form>
+		<h4>Вычисление факториала</h4>
+		<div style="display:flex; justify-content:center; margin:20px;">
+			<div>
+				<label for="number">Введите число: </label>
+				<input type="number" min="0" max="25" id="number" name="number" @oninput=Input />
+			</div>
+			<span style="padding-left:20px">Факториал: @factorial(num) </span>
+		</div>
+	</form>
+
+</details>
+
+
