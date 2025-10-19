@@ -30,17 +30,19 @@
     <a href="disciplines/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="FilteredDisciplines" Pagination="pagination">
-    <PropertyColumn Property="discipline => discipline.discipline_id" title="Id" Sortable="true"/>
-    <PropertyColumn Property="discipline => discipline.discipline_name"  Title="Предметы" Sortable="true" />
-    <PropertyColumn Property="discipline => discipline.number_of_lessons" Title = "Количество часов" Sortable="true"/>
+<div>
+    <QuickGrid Class="table" Items="FilteredDisciplines" Pagination="pagination">
+        <PropertyColumn Property="discipline => discipline.discipline_id" title="Id" Sortable="true" />
+        <PropertyColumn Property="discipline => discipline.discipline_name" Title="Предметы" Sortable="true" />
+        <PropertyColumn Property="discipline => discipline.number_of_lessons" Title="Количество часов" Sortable="true" />
 
-    <TemplateColumn Context="discipline">
-        <a href="@($"disciplines/edit?discipline_id={discipline.discipline_id}")">Edit</a> |
-        <a href="@($"disciplines/details?discipline_id={discipline.discipline_id}")">Details</a> |
-        <a href="@($"disciplines/delete?discipline_id={discipline.discipline_id}")">Delete</a>
-    </TemplateColumn>
-</QuickGrid>
+        <TemplateColumn Context="discipline">
+            <a href="@($"disciplines/edit?discipline_id={discipline.discipline_id}")">Edit</a> |
+            <a href="@($"disciplines/details?discipline_id={discipline.discipline_id}")">Details</a> |
+            <a href="@($"disciplines/delete?discipline_id={discipline.discipline_id}")">Delete</a>
+        </TemplateColumn>
+    </QuickGrid>
+</div>
 <Paginator State="pagination"></Paginator>
 
 @code {

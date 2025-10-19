@@ -27,16 +27,18 @@
     <a href="directions/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="FilterDirections" Pagination="pagination">
-    <PropertyColumn Property="direction => direction.direction_id" />
-    <PropertyColumn Property="direction => direction.direction_name" />
+<div class="grid-container">
+    <QuickGrid Class="table" Items="FilterDirections" Pagination="pagination">
+        <PropertyColumn Property="direction => direction.direction_id" />
+        <PropertyColumn Property="direction => direction.direction_name" />
 
-    <TemplateColumn Context="direction">
-        <a href="@($"directions/edit?direction_id={direction.direction_id}")">Edit</a> |
-        <a href="@($"directions/details?direction_id={direction.direction_id}")">Details</a> |
-        <a href="@($"directions/delete?direction_id={direction.direction_id}")">Delete</a>
-    </TemplateColumn>
-</QuickGrid>
+        <TemplateColumn Context="direction">
+            <a href="@($"directions/edit?direction_id={direction.direction_id}")">Edit</a> |
+            <a href="@($"directions/details?direction_id={direction.direction_id}")">Details</a> |
+            <a href="@($"directions/delete?direction_id={direction.direction_id}")">Delete</a>
+        </TemplateColumn>
+    </QuickGrid>
+</div>
 <Paginator State="pagination"></Paginator>
 
 @code {
