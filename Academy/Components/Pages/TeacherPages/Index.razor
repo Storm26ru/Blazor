@@ -13,7 +13,7 @@
 <h1>Преподаватели</h1>
 <div style="display:flex; justify-content:space-between">
     <form action="/teachers" data-enhance data-permanent>
-        <input type="search" name="teacherFilter" />
+        <input type="search" name="teacherFilter" placeholder="Введите фамилию" />
         <input type="submit" value="Search" />
     </form>
     <div>
@@ -30,6 +30,7 @@
 </p>
 
 <QuickGrid Class="table" Items="FilteredTeachers" Pagination="pagination">
+    <PropertyColumn Property="teacher => teacher.teacher_id" Title="№" Sortable="true" />
     <PropertyColumn Property="teacher => teacher.last_name" Title="Фамилия" Sortable="true" />
     <PropertyColumn Property="teacher => teacher.first_name" Title="Имя" Sortable="true" />
     <PropertyColumn Property="teacher => teacher.middle_name" Title="Отчество" Sortable="true" />

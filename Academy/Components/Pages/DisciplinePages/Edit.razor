@@ -23,6 +23,11 @@ else
                 <ValidationSummary role="alert"/>
                 <input type="hidden" name="Discipline.discipline_id" value="@Discipline.discipline_id" />
                 <div class="mb-3">
+                    <label for="discipline_id" class="form-label">discipline_id:</label>
+                    <InputNumber id="discipline_id" @bind-Value="Discipline.discipline_id" class="form-control" aria-required="true" />
+                    <ValidationMessage For="() => Discipline.discipline_id" class="text-danger" />
+                </div>
+                <div class="mb-3">
                     <label for="discipline_name" class="form-label">discipline_name:</label>
                     <InputText id="discipline_name" @bind-Value="Discipline.discipline_name" class="form-control" aria-required="true"/>
                     <ValidationMessage For="() => Discipline.discipline_name" class="text-danger" />
@@ -44,7 +49,7 @@ else
 
 @code {
     [SupplyParameterFromQuery]
-    private short discipline_id { get; set; }
+    private int discipline_id { get; set; }
 
     [SupplyParameterFromForm]
     private Discipline? Discipline { get; set; }

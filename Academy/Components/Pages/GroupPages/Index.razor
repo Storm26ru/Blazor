@@ -9,7 +9,7 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Index</h1>
+<h1>Groups</h1>
 
 <div style="display:flex; justify-content:space-between">
     <form action="/groups" data-enhance data-permanent>
@@ -31,9 +31,10 @@
 </p>
 
 <QuickGrid Class="table" Items="FilteredGroups" Pagination="pagination">
-    <PropertyColumn Property="group => group.group_name" />
-    <PropertyColumn Property="group => group.direction" />
-    <PropertyColumn Property="group => group.form" />
+    <PropertyColumn Property="group => group.group_id"  Sortable="true"/>
+    <PropertyColumn Property="group => group.group_name" Sortable="true" />
+    <PropertyColumn Property="group => group.direction" Sortable="true" />
+    <PropertyColumn Property="group => group.form" Sortable="true" />
 
     <TemplateColumn Context="group">
         <a href="@($"groups/edit?group_id={group.group_id}")">Edit</a> |

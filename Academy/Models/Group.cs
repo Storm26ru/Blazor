@@ -9,8 +9,10 @@ namespace Academy.Models
         [Required]
         public string group_name { get; set; }
         [Required]
-        public byte direction {  get; set; }
+        [Column(TypeName ="tinyint")]
+        public int direction {  get; set; }
         [Required]
-        public byte form {  get; set; }
+        [Column(TypeName ="tinyint")]
+        public int form {  get; set; }
     }
 }
